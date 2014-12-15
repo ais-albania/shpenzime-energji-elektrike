@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["treemap"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
+          ['Universitetet',    null,                 0,                               0],
+          ['UPT',   'Universitetet',             0,                               0],
+          ['UT',    'Universitetet',             0,                               0],
+          ['UBT',   'Universitetet',             0,                               0],
+          ['AA',    'Universitetet',             0,                               0],
+          ['AF',    'Universitetet',             0,                               0],
+          ['2012 UPT',    'UPT',            11,                              10],
+          ['2013 UPT',    'UPT',            52,                              20],
+          ['2014 UPT',    'UPT',            24,                              12],
+          ['2012 UT',    'UT',            11,                              10],
+          ['2013 UT',    'UT',            52,                              20],
+          ['2014 UT',    'UT',            11,                              10],
+          ['2012 UBT',    'UBT',            52,                              10],
+          ['2013 UBT',    'UBT',            24,                              20],
+          ['2014 UBT',    'UBT',            24,                              12],
+          ['2012 AA',    'AA',            11,                              10],
+          ['2013 AA',    'AA',            52,                              20],
+          ['2014 AA',    'AA',            24,                              12],
+          ['2012 AF',    'AF',            11,                              10],
+          ['2013 AF',    'AF',            52,                              20],
+          ['2014 AF',    'AF',            24,                              12],
+
+ 
+          ['95 fatura brenda afatit dhe 36 fatura te prapambetura',    '2012 UPT',            33,                              10],
+          ['94 fatura brenda afatit dhe 57 fatura te prapambetura',    '2013 UPT',            33,                              31],
+          ['118 fatura brenda afatit dhe 101 fatura te prapambetura',    '2014 UPT',            34,                              12],
+          ['55 fatura brenda afatit dhe 29 fatura te prapambetura',    '2012 UT',            33,                              10],
+          ['48 fatura brenda afatit dhe 36 fatura te prapambetura',    '2013 UT',            33,                              31],
+          ['76 fatura brenda afatit dhe 30 fatura te prapambetura',    '2014 UT',            34,                              10],
+          ['2 fatura brenda afatit dhe 32 fatura te prapambetura',    '2012 UBT',            33,                              31],
+          ['15 fatura brenda afatit dhe 32 fatura te prapambetura',    '2013 UBT',            33,                              12],
+          ['26 fatura brenda afatit dhe 45 fatura te prapambetura',    '2014 UBT',            34,                              12],
+          ['6 fatura brenda afatit dhe 4  fatura te prapambetura',    '2012 AA',            33,                              10],
+          ['6 fatura brenda afatit dhe 4 fatura te prapambetura',    '2013 AA',            33,                              31],
+          ['7 fatura brenda afatit dhe 4 fatura te prapambetura',    '2014 AA',            34,                              12],
+          ['9 fatura brenda afatit dhe 4 fatura te prapambetura',    '2012 AF',            33,                              10],
+          ['11 fatura brenda afatit dhe 2 fatura te prapambetura',    '2013 AF',            33,                              31],
+          ['8 fatura brenda afatit dhe 3 fatura te prapambetura',    '2014 AF',            34,                              12]
+        ]);
+
+        tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
+
+        tree.draw(data, {
+          minColor: '#f00',
+          midColor: '#ddd',
+          maxColor: '#0d0',
+          headerHeight: 15,
+          fontColor: 'black',
+          showScale: true
+        });
+
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

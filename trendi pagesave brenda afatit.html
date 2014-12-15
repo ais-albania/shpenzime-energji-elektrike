@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['Year', 'UPT', 'UT', 'UBT', 'AA', 'AF'],
+    ['2012',  60, 54, 1, 48, 55],
+    ['2013',  67, 55, 18, 43, 83],
+    ['2014',  66, 60, 65, 58, 73]
+  ]);
+
+  var options = {
+    title: 'Trendi i pagesave en. el. brenda afatit (vlerat ne %)',
+    hAxis: {title: 'Viti', titleTextStyle: {color: 'red'}}
+  };
+
+  var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+
+  chart.draw(data, options);
+
+}
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
